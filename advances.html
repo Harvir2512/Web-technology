@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Furniture Store</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0; padding: 0;
+            background-color: #f4f4f4;
+        }
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+        }
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            background-color: #575757;
+        }
+        .header {
+            text-align: center;
+            padding: 30px;
+            background: #444;
+            color: white;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px;
+        }
+        .product {
+            background: white;
+            margin: 15px;
+            padding: 15px;
+            width: 300px;
+            border-radius: 8px;
+            box-shadow: 0 0 8px gray;
+            text-align: center;
+        }
+        .product img {
+            width: 100%;
+            height: 200px;
+            border-radius: 5px;
+        }
+        .price {
+            color: green;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .buy-btn {
+            background: orange;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 5px;
+        }
+        .buy-btn:hover {
+            background: darkorange;
+        }
+        .cart {
+            background: #fff;
+            padding: 15px;
+            margin: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 8px gray;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#">Home</a>
+        <a href="#">Products</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <div class="header">
+        <h1>Welcome to My Furniture Store</h1>
+        <p>Buy & Sell Furniture Online</p>
+    </div>
+
+    <div class="container">
+        <div class="product">
+            <img src="sofa.jpg" alt="Sofa Set">
+            <h2>Sofa Set</h2>
+            <p>Comfortable 3-seater sofa with cushions.</p>
+            <p class="price">₹15,000</p>
+            <button class="buy-btn" onclick="addToCart('Sofa Set',15000)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="dining.jpg" alt="Dining Table">
+            <h2>Dining Table</h2>
+            <p>Wooden dining table with 4 chairs.</p>
+            <p class="price">₹12,000</p>
+            <button class="buy-btn" onclick="addToCart('Dining Table',12000)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="bed.jpg" alt="Bed">
+            <h2>Bed</h2>
+            <p>King size bed with storage.</p>
+            <p class="price">₹20,000</p>
+            <button class="buy-btn" onclick="addToCart('Bed',20000)">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="cart" id="cart">
+        <h2>Shopping Cart</h2>
+        <ul id="cartItems"></ul>
+    </div>
+
+    <script>
+        function addToCart(item, price) {
+            var cartList = document.getElementById("cartItems");
+            var li = document.createElement("li");
+            li.textContent = item + " - ₹" + price;
+            cartList.appendChild(li);
+        }
+    </script>
+</body>
+</html>
